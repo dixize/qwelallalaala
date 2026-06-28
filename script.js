@@ -77,11 +77,13 @@ document.addEventListener("DOMContentLoaded", () => {
         checkbox.addEventListener("change", calculateTotal);
     });
 
-    // 5. ОТПРАВКА ФОРМЫ (Netlify обработает без preventDefault)
+    // 5. ОТПРАВКА ФОРМЫ (Netlify обработает отправку самостоятельно)
     const form = document.getElementById("portfolio-interactive-form");
     const submitBtn = document.getElementById("form-submit-trigger");
 
     form.addEventListener("submit", () => {
+        // Мы НЕ используем e.preventDefault(), чтобы Netlify увидел отправку
+        // Просто визуально отмечаем, что процесс пошел:
         submitBtn.classList.add("disabled");
         submitBtn.querySelector(".spinner").classList.remove("hidden");
     });
