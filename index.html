@@ -36,9 +36,65 @@
         </div>
     </section>
 
-    <section id="advantages" class="advantages-section scroll-reveal">...</section>
-    <section id="about" class="about-section scroll-reveal">...</section>
-    <section id="portfolio" class="portfolio-section scroll-reveal">...</section>
+    <section id="advantages" class="advantages-section scroll-reveal">
+        <div class="section-container">
+            <div class="advantages-head text-center">
+                <span class="meta-tag">СТЕК И ПОДХОД</span>
+                <h2 class="section-title">Почему мои сайты работают эффективно</h2>
+            </div>
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="adv-icon">⚡</div>
+                    <h3>Быстрая загрузка</h3>
+                    <p>Пишу код на чистом JavaScript без лишних громоздких библиотек.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="adv-icon">📱</div>
+                    <h3>Полная адаптивность</h3>
+                    <p>Интерфейсы идеально подстраиваются под любые разрешения.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="adv-icon">🤖</div>
+                    <h3>Интеграция API</h3>
+                    <p>Настраиваю мгновенную передачу заявок прямо в ваш Telegram.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section scroll-reveal">
+        <div class="section-container">
+            <div class="layout-about-grid">
+                <div class="about-visual-panel">
+                    <div class="tech-stack-cloud animate-float">
+                        <span class="stack-badge">HTML5</span>
+                        <span class="stack-badge">JavaScript</span>
+                        <span class="stack-badge">Telegram API</span>
+                    </div>
+                </div>
+                <div class="about-info-panel">
+                    <span class="meta-tag">ФРОНТЕНД РАЗРАБОТКА</span>
+                    <h2 class="section-title">Кастомный код и внимание к деталям</h2>
+                    <p class="about-bio-p">Я специализируюсь на создании отзывчивых веб-интерфейсов...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio-section scroll-reveal">
+        <div class="section-container">
+            <div class="section-meta-split">
+                <h2 class="section-title">Мои веб-разработки</h2>
+                <div class="filter-controls">
+                    <button class="filter-btn active" data-filter="all">Все работы</button>
+                    <button class="filter-btn" data-filter="web">Сайты</button>
+                    <button class="filter-btn" data-filter="apps">Магазины</button>
+                </div>
+            </div>
+            <div class="portfolio-showcase-grid">
+                </div>
+        </div>
+    </section>
 
     <section id="contact" class="contact-section scroll-reveal">
         <div class="section-container">
@@ -46,82 +102,25 @@
                 <form id="portfolio-interactive-form" name="contact" method="POST" data-netlify="true">
                     <input type="hidden" name="form-name" value="contact">
                     
-                    <div class="form-head text-center">
-                        <span class="meta-tag">ОНЛАЙН КАЛЬКУЛЯТОР</span>
-                        <h2 class="section-title">Настройте конфигурацию</h2>
-                        <p class="form-sub">Выберите тип веб-платформы, подключите нужные опции и отправьте готовое ТЗ.</p>
-                    </div>
+                    <h2 class="section-title">Настройте конфигурацию</h2>
+                    
+                    <input type="text" name="name" id="client_name" required placeholder="Ваше имя">
+                    <input type="text" name="contact" id="client_contact" required placeholder="Telegram / Телефон">
+                    <textarea name="message" id="client_task" rows="4" placeholder="Пожелания"></textarea>
 
-                    <div class="config-group">
-                        <label class="group-label">1. Архитектура проекта</label>
-                        <div class="config-selector-grid">
-                            <div class="selector-tile active" data-type="landing">
-                                <h4>Лендинг / Промо</h4>
-                            </div>
-                            <div class="selector-tile" data-type="service">
-                                <h4>Сайт услуг</h4>
-                            </div>
-                            <div class="selector-tile" data-type="store">
-                                <h4>Интернет-магазин</h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="config-group">
-                        <label class="group-label">2. Дополнительные опции</label>
-                        <div class="addons-flex">
-                            <label class="addon-checkbox-label">
-                                <input type="checkbox" name="telegram_api" id="addon-tg">
-                                <span class="custom-checkbox"></span>
-                                <div><strong>Интеграция Telegram API</strong></div>
-                            </label>
-                            <label class="addon-checkbox-label">
-                                <input type="checkbox" name="ui_animations" id="addon-anim">
-                                <span class="custom-checkbox"></span>
-                                <div><strong>Премиальные UI-анимации</strong></div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="config-group">
-                        <label class="group-label">3. Контактные данные</label>
-                        <div class="form-row-split">
-                            <div class="input-wrapper">
-                                <label for="client_name">Ваше имя *</label>
-                                <input type="text" name="name" id="client_name" required placeholder="Иван">
-                            </div>
-                            <div class="input-wrapper">
-                                <label for="client_contact">Telegram / Телефон *</label>
-                                <input type="text" name="contact" id="client_contact" required placeholder="@username">
-                            </div>
-                        </div>
-                        <div class="input-wrapper">
-                            <label for="client_task">Пожелания к проекту</label>
-                            <textarea name="message" id="client_task" rows="4" placeholder="Опишите ваши идеи..."></textarea>
-                        </div>
-                    </div>
-
-                    <div class="price-counter-panel">
-                        <span class="counter-label">Предварительный расчет:</span>
-                        <div class="counter-value"><span id="live-price-display">750</span> ₽</div>
-                    </div>
-
-                    <button type="submit" id="form-submit-trigger" class="action-btn btn-prime btn-wide">
-                        <span class="btn-text">Отправить спецификацию</span>
+                    <button type="submit" id="form-submit-trigger" class="action-btn btn-prime">
+                        <span class="btn-text">Отправить</span>
                         <div class="spinner hidden"></div>
                     </button>
                 </form>
 
                 <div id="form-success-state" class="success-state-ui hidden">
-                    <div class="success-radial-icon">✓</div>
                     <h2 class="section-title">ТЗ успешно сформировано!</h2>
-                    <p class="form-sub" style="margin-top: 12px; font-size: 16px;">Данные отправлены. Скоро я свяжусь с вами.</p>
+                    <p>Данные отправлены. Я скоро свяжусь с вами.</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <footer class="site-footer">...</footer>
 
     <script src="script.js"></script>
 </body>
