@@ -77,14 +77,33 @@ document.addEventListener("DOMContentLoaded", () => {
         checkbox.addEventListener("change", calculateTotal);
     });
 
-    // 5. ОТПРАВКА ФОРМЫ (Netlify обработает отправку самостоятельно)
+    // 5. ОТПРАВКА ФОРМЫ (через AJAX для работы с вашим блоком успеха)
     const form = document.getElementById("portfolio-interactive-form");
     const submitBtn = document.getElementById("form-submit-trigger");
+    const successState = document.getElementById("form-success-state");
 
-    form.addEventListener("submit", () => {
-        // Мы НЕ используем e.preventDefault(), чтобы Netlify увидел отправку
-        // Просто визуально отмечаем, что процесс пошел:
+    form.addEventListener("submit", (e) => {
+        e.preventDefault(); // Останавливаем стандартную перезагрузку
+
         submitBtn.classList.add("disabled");
         submitBtn.querySelector(".spinner").classList.remove("hidden");
+
+        const formData = new FormData(form);
+
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString(),
+        })
+        .then(() => {
+            // Успешно: скрываем форму и показываем блок успеха
+            form.style.display = "none";
+            successState.classList.remove("hidden");
+        })
+        .catch((error) => {
+            alert("Ошибка отправки, попробуйте еще раз.");
+            submitBtn.classList.remove("disabled");
+            submitBtn.querySelector(".spinner").classList.add("hidden");
+        });
     });
 });
